@@ -3,6 +3,8 @@
 - Leave running of the server
 - Open other window of the terminal and type: yarn start
 - Leave running of the react
+- Go to the internet: http://localhost:3000
+- Enjoy your CRUD
 
 # Getting Started with Create React App
 

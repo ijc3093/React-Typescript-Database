@@ -10,6 +10,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Bootstrap for React
+https://react-bootstrap.github.io/components/alerts
+
 ## Available Scripts
 
 In the project directory, you can run:

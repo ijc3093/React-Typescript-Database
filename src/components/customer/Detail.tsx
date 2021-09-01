@@ -6,7 +6,7 @@ interface IState {
     customers: any[];
 }
 
-export default class Home extends React.Component<RouteComponentProps, IState> {
+export default class Detail extends React.Component<RouteComponentProps, IState> {
     // CONSTRUCTOR
     constructor(props: RouteComponentProps) {
         super(props);
@@ -22,25 +22,11 @@ export default class Home extends React.Component<RouteComponentProps, IState> {
         })
     }
 
-    //DELETE
-    public deleteCustomer(id: number) {
-        axios.delete(`http://localhost:5000/customers/${id}`).then(data => {
-            const index = this.state.customers.findIndex(customer => customer.id === id);
-            this.state.customers.splice(index, 1);
-            this.props.history.push('/');
-        })
-    }
-
     // HTML
     public render() {
         const customers = this.state.customers;
         return (
             <div>
-                {customers.length === 0 && (
-                    <div className="text-center">
-                        <h2>No customer found at the moment</h2>
-                    </div>
-                )}
                 <div className="container">
                     <div className="row">
                         <table className="table table-bordered">
@@ -52,7 +38,6 @@ export default class Home extends React.Component<RouteComponentProps, IState> {
                                     <th scope="col">Phone</th>
                                     <th scope="col">Address</th>
                                     <th scope="col">Description</th>
-                                    <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,16 +49,6 @@ export default class Home extends React.Component<RouteComponentProps, IState> {
                                         <td>{customer.phone}</td>
                                         <td>{customer.address}</td>
                                         <td>{customer.description}</td>
-                                        <td>
-                                            <div className="d-flex justify-content-between align-items-center">
-                                                <div className="btn-group" style={{ marginBottom: "20px" }}>
-                                                    {/* Look at url that same exacty for this */}
-                                                    <Link to={`detail/${customer.id}`} className="btn btn-sm btn-outline-secondary">Detail Customer</Link>
-                                                    <Link to={`edit/${customer.id}`} className="btn btn-sm btn-outline-secondary">Edit Customer </Link>
-                                                    <button className="btn btn-sm btn-outline-secondary" onClick={() => this.deleteCustomer(customer.id)}>Delete Customer</button>
-                                                </div>
-                                            </div>
-                                        </td>
                                     </tr>
                                 )}
                             </tbody>

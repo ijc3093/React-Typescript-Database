@@ -1,0 +1,22 @@
+{
+  "customers": [
+    {
+      "first_name": "Izz",
+      "last_name": "Chuzz",
+      "email": "izz2009@gmail.com",
+      "phone": "587-599-9085",
+      "address": "38 Post Dr Postline Canada 35890",
+      "description": "This is just test",
+      "id": 3
+    },
+    {
+      "first_name": "Iz",
+      "last_name": "Chuz",
+      "email": "izz200@gmail.com",
+      "phone": "581-599-9084",
+      "address": "37 Post Dr Postline Canada 35890",
+      "description": "This is just test",
+      "id": 5
+    }
+  ]
+}
